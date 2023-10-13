@@ -13,7 +13,7 @@ import { NavButton } from "../UI/navbutton";
 export default function Navigation() {
   return (
     // wrapper
-    <header className="border-0 border-b border-b-gray-500 flex items-center">
+    <header className="border-0 border-b border-b-neutral-800 flex items-center fixed">
       <nav className="flex justify-between items-center bg-neutral-900 w-screen py-1.5 px-3 md:py-2 md:px-8">
         {/* logo */}
         <div className="flex items-center">
@@ -65,7 +65,7 @@ export default function Navigation() {
             iconClass="w-5 h-5"
           />
         </div>
-        <div className="flex md:hidden">
+        <div className="flex md:hidden pr-4">
           <NavButton
             className="flex justify-center items-center self-center bg-orange-700 text-white px-3 h-8 rounded-3xl text-xs font-semibold gap-2 active:bg-orange-800"
             text="Use App"
