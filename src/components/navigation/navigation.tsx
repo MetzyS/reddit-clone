@@ -18,7 +18,7 @@ export default function Navigation() {
         {/* logo */}
         <div className="flex items-center">
           <NavButton
-            className="text-white md:hidden hover:bg-neutral-700 active:bg-neutral-600 rounded-full px-2"
+            className="text-white md:hidden hover:bg-neutral-700 active:bg-neutral-600 rounded-full px-2 py-1.5"
             icon={AiOutlineMenu}
             iconClass="w-5 h-6"
           />
@@ -71,12 +71,12 @@ export default function Navigation() {
             text="Use App"
           />
           <NavButton
-            className="flex justify-center items-center ml-3 rounded-xl p-1 hover:bg-neutral-700"
+            className="flex justify-center items-center ml-3 rounded-xl p-1 hover:bg-neutral-700 active:bg-neutral-600"
             iconClass="text-white w-7 h-7"
             icon={CiSearch}
           />
           <NavButton
-            className="flex justify-center items-center self-center hover:bg-neutral-700 p-2 rounded-full"
+            className="flex justify-center items-center self-center hover:bg-neutral-700 active:bg-neutral-600 p-2 rounded-full"
             iconClass="text-white w-5 h-5"
             icon={BsThreeDots}
           />
