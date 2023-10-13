@@ -1,3 +1,4 @@
+"use client";
 import { NavButton } from "../UI/navbutton";
 import { NavItem } from "../UI/navitem";
 import Image from "next/image";
@@ -8,10 +9,14 @@ import NextIcon from "../../../public/nextjs.svg";
 import TailwindIcon from "../../../public/tailwind.svg";
 import GitHubIcon from "../../../public/github.svg";
 
-export default function Navigation() {
+export default function Navigation(props: { menuIsOpen: boolean }) {
   const Icon = <Image src={ReactIcon} alt="" />;
   return (
-    <nav className="fixed flex mt-12 w-72 bg-neutral-900 h-full overflow-y-scroll overflow-x-hidden">
+    <nav
+      className={`fixed flex mt-12 border-0 border-t border-neutral-800 ${
+        props.menuIsOpen ? "w-72" : "w-0"
+      } bg-neutral-900 h-full overflow-y-scroll overflow-x-hidden`}
+    >
       <ul className="w-full">
         {/* Popular */}
         <div className="border-0 border-b border-neutral-800 py-3">
@@ -27,9 +32,9 @@ export default function Navigation() {
             <span className="text-xs tracking-widest px-6 text-neutral-400">
               RECENT
             </span>
-            <button type="button" className="mr-6">
+            <span className="mr-6">
               <MdExpandLess className="w-5 h-5 text-neutral-300" />
-            </button>
+            </span>
           </button>
 
           <div>

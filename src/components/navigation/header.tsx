@@ -1,3 +1,5 @@
+"use client";
+import { Dispatch, useState } from "react";
 import Image from "next/image";
 import redditbig from "../../../public/redditbig.svg";
 import redditsmall from "../../../public/redditsmall.svg";
@@ -10,13 +12,13 @@ import {
 import { AiOutlineMenu } from "react-icons/ai";
 import { NavButton } from "../UI/navbutton";
 
-export default function Header() {
+export default function Header({ handleClickMenu }: any) {
   return (
     // wrapper
     <header className="border-0 border-b border-b-neutral-800 flex items-center fixed">
       <div className="flex justify-between items-center bg-neutral-900 w-screen py-1.5 px-3 md:py-2 md:px-8">
         {/* logo */}
-        <div className="flex items-center">
+        <div className="flex items-center" onClick={handleClickMenu}>
           <NavButton
             className="text-white md:hidden hover:bg-neutral-700 active:bg-neutral-600 rounded-full px-2 py-1.5"
             icon={AiOutlineMenu}

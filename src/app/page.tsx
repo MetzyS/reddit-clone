@@ -1,10 +1,18 @@
+"use client";
+import { useState } from "react";
 import Header from "@/components/navigation/header";
 import Navigation from "@/components/navigation/navigation";
+
 export default function Home() {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const handleClickMenu = () => {
+    setMenuIsOpen(!menuIsOpen);
+    // console.log("click");
+  };
   return (
     <>
-      <Header />
-      <Navigation />
+      <Header handleClickMenu={handleClickMenu} />
+      <Navigation menuIsOpen={menuIsOpen} />
       <div className="pt-20">
         {/* <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis

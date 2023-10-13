@@ -16,7 +16,9 @@ export const NavItem = (props: {
   return (
     <li className={props.btnClass + " " + bgMain}>
       <a href="" className="flex items-center gap-4 h-10 px-6">
-        <Image src={image} width={width} alt="" className="cursor-pointer" />
+        {props.image && (
+          <Image src={image} width={width} alt="" className="cursor-pointer" />
+        )}
         <NavButton
           className="flex items-center w-full text-left h-full text-sm"
           icon={props.icon}
