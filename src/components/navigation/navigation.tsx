@@ -19,17 +19,18 @@ export default function Navigation(props: { menuIsOpen: boolean }) {
     >
       <ul className="w-full">
         {/* Popular */}
-        <div className="border-0 border-b border-neutral-800 py-3">
+        <div className="border-0 border-b border-neutral-800 py-2.5">
           <NavItem icon={FaExternalLinkSquareAlt} text="Popular" main={true} />
         </div>
 
         {/* Recent */}
-        <div className="flex flex-col gap-3 border-0 border-b border-neutral-800 py-3">
+        <div className="flex flex-col border-0 border-b border-neutral-800 py-3 mt-1 mb-1">
+          {/* creer un component pour ce bouton: */}
           <button
             type="button"
             className="flex justify-between h-8 items-center hover:bg-neutral-800"
           >
-            <span className="text-xs tracking-widest px-6 text-neutral-400">
+            <span className="text-xs tracking-widest px-4 text-neutral-400">
               RECENT
             </span>
             <span className="mr-6">
@@ -65,7 +66,33 @@ export default function Navigation(props: { menuIsOpen: boolean }) {
           </div>
         </div>
         {/* Topics */}
-        <div></div>
+        <div className="flex flex-col border-0 border-b border-neutral-800 py-4 mb-2">
+          <button
+            type="button"
+            className="flex justify-between h-8 items-center hover:bg-neutral-800"
+          >
+            <span className="text-xs tracking-widest px-4 text-neutral-400">
+              TOPICS
+            </span>
+            <span className="mr-6">
+              <MdExpandLess className="w-5 h-5 text-neutral-300" />
+            </span>
+          </button>
+        </div>
+        {/* Ressources */}
+        <div className="flex flex-col  py-3 mt-1 mb-2">
+          <button
+            type="button"
+            className="flex justify-between h-8 items-center hover:bg-neutral-800"
+          >
+            <span className="text-xs tracking-widest px-4 text-neutral-400">
+              RESOURCES
+            </span>
+            <span className="mr-6">
+              <MdExpandLess className="w-5 h-5 text-neutral-300" />
+            </span>
+          </button>
+        </div>
       </ul>
     </nav>
   );
