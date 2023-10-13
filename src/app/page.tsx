@@ -1,10 +1,12 @@
+import Header from "@/components/navigation/header";
 import Navigation from "@/components/navigation/navigation";
 export default function Home() {
   return (
     <>
+      <Header />
       <Navigation />
       <div className="pt-20">
-        <p>
+        {/* <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
           quod at voluptas recusandae nulla minus labore magnam facilis, quam
           perferendis, quis, corrupti quisquam qui odit debitis nihil.
@@ -40,7 +42,7 @@ export default function Home() {
           beatae est, molestiae quisquam in, nemo consequuntur suscipit, quo
           ducimus ab corporis impedit amet quaerat error! Repudiandae beatae
           deserunt adipisci!
-        </p>
+        </p> */}
       </div>
     </>
   );
