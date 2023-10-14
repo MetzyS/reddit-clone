@@ -1,4 +1,4 @@
-import { NavButton } from "./navbutton";
+import { NavButton } from "./NavButton";
 import Image from "next/image";
 export const NavItem = (props: {
   text?: string;
@@ -8,6 +8,7 @@ export const NavItem = (props: {
   main?: boolean;
   image?: string;
   imageWidth?: number;
+  customFunc?: () => void;
 }) => {
   let bgMain = props.main ? "bg-neutral-800" : "";
   let image = props.image ? props.image : "";
@@ -24,6 +25,7 @@ export const NavItem = (props: {
           icon={props.icon}
           iconClass={"h-5 w-5 mr-3 " + props.iconClass}
           text={props.text}
+          customFunc={props.customFunc}
         />
       </a>
     </li>

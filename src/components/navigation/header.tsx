@@ -1,24 +1,21 @@
 "use client";
-import { Dispatch, useState } from "react";
 import Image from "next/image";
 import redditbig from "../../../public/redditbig.svg";
 import redditsmall from "../../../public/redditsmall.svg";
 import { CiSearch } from "react-icons/ci";
-import {
-  BsFillSearchHeartFill,
-  BsQrCodeScan,
-  BsThreeDots,
-} from "react-icons/bs";
+import { BsQrCodeScan, BsThreeDots } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
-import { NavButton } from "../UI/navbutton";
+import { NavButton } from "../UI/NavButton";
+import { useMenu } from "@/app/store/useMenu";
 
-export default function Header({ handleClickMenu }: any) {
+export default function Header() {
+  const { openMenu } = useMenu();
   return (
     // wrapper
     <header className="border-0 border-b border-b-neutral-800 flex items-center fixed">
       <div className="flex justify-between items-center bg-neutral-900 w-screen py-1.5 px-3 md:py-2 md:px-8">
         {/* logo */}
-        <div className="flex items-center" onClick={handleClickMenu}>
+        <div className="flex items-center" onClick={() => openMenu("menu")}>
           <NavButton
             className="text-white md:hidden hover:bg-neutral-700 active:bg-neutral-600 rounded-full px-2 py-1.5"
             icon={AiOutlineMenu}
@@ -80,6 +77,7 @@ export default function Header({ handleClickMenu }: any) {
           <NavButton
             className="flex justify-center items-center self-center hover:bg-neutral-700 active:bg-neutral-600 p-2 rounded-full"
             iconClass="text-white w-5 h-5"
+            customFunc={() => openMenu("headerMenu")}
             icon={BsThreeDots}
           />
         </div>

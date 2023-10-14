@@ -1,20 +1,9 @@
 "use client";
-import { useState } from "react";
-import Header from "@/components/navigation/header";
-import Navigation from "@/components/navigation/navigation";
-
 export default function Home() {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const handleClickMenu = () => {
-    setMenuIsOpen(!menuIsOpen);
-    // console.log("click");
-  };
   return (
     <>
-      <Header handleClickMenu={handleClickMenu} />
-      <Navigation menuIsOpen={menuIsOpen} />
-      <div className="pt-20">
-        {/* <p>
+      <div className="pt-20 px-5">
+        <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
           quod at voluptas recusandae nulla minus labore magnam facilis, quam
           perferendis, quis, corrupti quisquam qui odit debitis nihil.
@@ -50,7 +39,7 @@ export default function Home() {
           beatae est, molestiae quisquam in, nemo consequuntur suscipit, quo
           ducimus ab corporis impedit amet quaerat error! Repudiandae beatae
           deserunt adipisci!
-        </p> */}
+        </p>
       </div>
     </>
   );
