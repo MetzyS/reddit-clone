@@ -8,6 +8,7 @@ interface Menu {
   resources: boolean;
   submenu: boolean;
   openMenu: (menu: keyof Menu) => void;
+  closeMenu: (menu: keyof Menu) => void;
 }
 
 export const useMenu = create<Menu>()((set) => ({
@@ -18,4 +19,5 @@ export const useMenu = create<Menu>()((set) => ({
   resources: false,
   submenu: false,
   openMenu: (menu) => set((state) => ({ [menu]: !state[menu] })),
+  closeMenu: (menu) => set((state) => ({ [menu]: false })),
 }));

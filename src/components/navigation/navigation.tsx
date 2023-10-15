@@ -15,12 +15,22 @@ import { useMenu } from "@/app/store/useMenu";
 export default function Navigation() {
   // Gestion de l'ouverture des catégories + modale (recent, topics..) dans la nav mobile
 
-  const { menu, headerMenu, recent, resources, topics, openMenu } = useMenu();
+  const { menu, headerMenu, recent, resources, topics, openMenu, closeMenu } =
+    useMenu();
 
   return (
     <>
+      {menu && (
+        <div
+          className="bg-black opacity-30 h-full w-full fixed z-10"
+          onClick={() => {
+            closeMenu("menu");
+            closeMenu("headerMenu");
+          }}
+        ></div>
+      )}
       <nav
-        className={`fixed flex mt-12 border-0 border-t border-neutral-800 ${
+        className={`fixed z-20 flex mt-12 border-0 border-t border-neutral-800 ${
           menu ? "w-72" : "w-0"
         } bg-neutral-900 h-full pr-1 overflow-hidden hover:overflow-y-scroll`}
       >

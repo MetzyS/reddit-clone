@@ -9,13 +9,19 @@ import { NavButton } from "../UI/NavButton";
 import { useMenu } from "@/app/store/useMenu";
 
 export default function Header() {
-  const { openMenu } = useMenu();
+  const { openMenu, closeMenu } = useMenu();
   return (
     // wrapper
-    <header className="border-0 border-b border-b-neutral-800 flex items-center fixed">
+    <header className="border-0 border-b border-b-neutral-800 flex items-center fixed z-20">
       <div className="flex justify-between items-center bg-neutral-900 w-screen py-1.5 px-3 md:py-2 md:px-8">
         {/* logo */}
-        <div className="flex items-center" onClick={() => openMenu("menu")}>
+        <div
+          className="flex items-center"
+          onClick={() => {
+            openMenu("menu");
+            closeMenu("headerMenu");
+          }}
+        >
           <NavButton
             className="text-white md:hidden hover:bg-neutral-700 active:bg-neutral-600 rounded-full px-2 py-1.5"
             icon={AiOutlineMenu}
@@ -77,7 +83,10 @@ export default function Header() {
           <NavButton
             className="flex justify-center items-center self-center hover:bg-neutral-700 active:bg-neutral-600 p-2 rounded-full"
             iconClass="text-white w-5 h-5"
-            customFunc={() => openMenu("headerMenu")}
+            customFunc={() => {
+              openMenu("headerMenu");
+              closeMenu("menu");
+            }}
             icon={BsThreeDots}
           />
         </div>
