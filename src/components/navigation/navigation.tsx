@@ -6,11 +6,13 @@ import Image from "next/image";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { MdExpandLess } from "react-icons/md";
 import { MobileMenuModal } from "../modal/MobileMenuModal";
+import { IoGameControllerOutline } from "react-icons/io5";
 import ReactIcon from "../../../public/reactjs.svg";
 import NextIcon from "../../../public/nextjs.svg";
 import TailwindIcon from "../../../public/tailwind.svg";
 import GitHubIcon from "../../../public/github.svg";
 import { useMenu } from "@/app/store/useMenu";
+import { NavSubMenu } from "../UI/NavSubMenu";
 
 export default function Navigation() {
   // Gestion de l'ouverture des catégories + modale (recent, topics..) dans la nav mobile
@@ -118,7 +120,12 @@ export default function Navigation() {
 
             {/* Topics items */}
             <div className={topics ? "block" : "hidden"}>
-              <NavItem
+              <NavSubMenu
+                text="Gaming"
+                name="gaming"
+                icon={IoGameControllerOutline}
+              />
+              {/* <NavItem
                 image={NextIcon}
                 btnClass="hover:bg-neutral-800"
                 imageWidth={25}
@@ -135,7 +142,7 @@ export default function Navigation() {
                 btnClass="hover:bg-neutral-800"
                 imageWidth={25}
                 text="NextJS"
-              />
+              /> */}
             </div>
           </div>
 
