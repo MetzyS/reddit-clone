@@ -13,12 +13,15 @@ import TailwindIcon from "../../../public/tailwind.svg";
 import GitHubIcon from "../../../public/github.svg";
 import { useMenu } from "@/app/store/useMenu";
 import { NavSubMenu } from "../UI/NavSubMenu";
+import { DUMMY_SUBCAT } from "@/data/DUMMY_DATA";
+import { useMenuTopics } from "@/app/store/useMenuTopics";
 
 export default function Navigation() {
   // Gestion de l'ouverture des catégories + modale (recent, topics..) dans la nav mobile
 
   const { menu, headerMenu, recent, resources, topics, openMenu, closeMenu } =
     useMenu();
+  const { openMenuTopics, closeMenuTopics } = useMenuTopics();
 
   return (
     <>
@@ -120,29 +123,17 @@ export default function Navigation() {
 
             {/* Topics items */}
             <div className={topics ? "block" : "hidden"}>
-              <NavSubMenu
-                text="Gaming"
-                name="gaming"
-                icon={IoGameControllerOutline}
-              />
-              {/* <NavItem
-                image={NextIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="NextJS"
-              />
-              <NavItem
-                image={NextIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="NextJS"
-              />
-              <NavItem
-                image={NextIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="NextJS"
-              /> */}
+              {DUMMY_SUBCAT &&
+                DUMMY_SUBCAT.map((item) => (
+                  <NavSubMenu
+                    text={item.text}
+                    name={item.name}
+                    key={item.name + "-" + item.id}
+                    icon={item.icon}
+                    customFunc={() => openMenuTopics(item.name)}
+                    state={useMenuTopics((state) => state[item.name])}
+                  />
+                ))}
             </div>
           </div>
 

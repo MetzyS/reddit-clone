@@ -1,18 +1,17 @@
 import { MdExpandLess } from "react-icons/md";
-import { useMenuTopics } from "@/app/store/useMenuTopics";
 export const NavSubMenu = (
   props: {
     name: string;
     text: string;
     className?: string;
-    icon?: React.ElementType;
+    icon: React.ElementType;
     iconClass?: string;
-    customFunc?: () => void;
+    customFunc: () => void;
+    state: any;
   },
   { children }: { children?: React.ReactNode }
 ) => {
-  const topic = name;
-  const { openMenuTopics } = useMenuTopics();
+  console.log(props.state);
   return (
     <li className="flex items-center gap-4 h-10 px-4 hover:bg-neutral-800 active:bg-neutral-700 text-sm">
       <button
@@ -29,7 +28,11 @@ export const NavSubMenu = (
           )}
           {props.text}
         </span>
-        <MdExpandLess className={"w-5 h-5 text-neutral-300 "} />
+        <MdExpandLess
+          className={`w-5 h-5 text-neutral-300 ${
+            props.state ? "rotate-180" : "rotate-0"
+          }`}
+        />
       </button>
       {children}
     </li>

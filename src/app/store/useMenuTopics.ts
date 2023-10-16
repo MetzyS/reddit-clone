@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface MenuTopics {
+export interface MenuTopics {
   gaming: boolean;
   sports: boolean;
   business: boolean;
@@ -14,7 +14,7 @@ interface MenuTopics {
 export const useMenuTopics = create<MenuTopics>()((set) => ({
   gaming: false,
   sports: false,
-  business: true,
+  business: false,
   crypto: false,
   television: false,
   celebrity: false,
