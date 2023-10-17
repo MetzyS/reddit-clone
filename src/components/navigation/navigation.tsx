@@ -36,11 +36,11 @@ export default function Navigation() {
         ></div>
       )}
       <nav
-        className={`fixed z-20 flex mt-12 border-0 border-t border-neutral-800 ${
+        className={`fixed h-screen z-20 flex mt-12 border-0 border-t border-neutral-800 ${
           menu ? "w-72" : "w-0"
-        } bg-neutral-900 h-full pr-1 overflow-hidden hover:overflow-y-scroll`}
+        } bg-neutral-900 h-full pr-1 overflow-x-hidden hover:overflow-y-scroll`}
       >
-        <ul className="w-full">
+        <ul className="w-full pr-1">
           {/* Popular */}
           <div className="border-0 border-b border-neutral-800 py-2.5">
             <NavItem
@@ -139,6 +139,7 @@ export default function Navigation() {
                         <a
                           href={link.path}
                           className="flex items-center ml-8 pl-4 h-10 border-0 border-l  border-neutral-700 hover:bg-neutral-800 hover:border-neutral-400 active:bg-neutral-700"
+                          key={link.name + "-" + link.id}
                         >
                           <span className="text-sm">{link.text}</span>
                         </a>

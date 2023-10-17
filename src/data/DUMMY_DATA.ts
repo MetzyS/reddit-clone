@@ -74,6 +74,48 @@ export const DUMMY_SUBCAT_TOPICS_LINKS = [
       text: "Rocket League",
       path: "/",
     },
+    {
+      id: 4,
+      name: "hollowknightsilksong",
+      text: "Hollow Knight: Silksong",
+      path: "/",
+    },
+    {
+      id: 5,
+      name: "teamfighttactics",
+      text: "Teamfight Tactics",
+      path: "/",
+    },
+    {
+      id: 6,
+      name: "diablo",
+      text: "Diablo",
+      path: "/",
+    },
+    {
+      id: 7,
+      name: "wordlofwarcraft",
+      text: "World of Warcraft",
+      path: "/",
+    },
+    {
+      id: 8,
+      name: "counterstrike",
+      text: "Counter Strike",
+      path: "/",
+    },
+    {
+      id: 9,
+      name: "valheim",
+      text: "Valheim",
+      path: "/",
+    },
+    {
+      id: 10,
+      name: "amongus",
+      text: "Among Us",
+      path: "/",
+    },
   ],
   [
     {
