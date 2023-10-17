@@ -13,8 +13,9 @@ import TailwindIcon from "../../../public/tailwind.svg";
 import GitHubIcon from "../../../public/github.svg";
 import { useMenu } from "@/app/store/useMenu";
 import { NavSubMenu } from "../UI/NavSubMenu";
-import { DUMMY_SUBCAT } from "@/data/DUMMY_DATA";
+import { DUMMY_SUBCAT_TOPICS } from "@/data/DUMMY_DATA";
 import { useMenuTopics } from "@/app/store/useMenuTopics";
+import { DUMMY_SUBCAT_TOPICS_LINKS } from "@/data/DUMMY_DATA";
 
 export default function Navigation() {
   // Gestion de l'ouverture des catégories + modale (recent, topics..) dans la nav mobile
@@ -122,9 +123,9 @@ export default function Navigation() {
             </button>
 
             {/* Topics items */}
-            <div className={topics ? "block" : "hidden"}>
-              {DUMMY_SUBCAT &&
-                DUMMY_SUBCAT.map((item) => (
+            <ul className={topics ? "block" : "hidden"}>
+              {DUMMY_SUBCAT_TOPICS &&
+                DUMMY_SUBCAT_TOPICS.map((item, index) => (
                   <NavSubMenu
                     text={item.text}
                     name={item.name}
@@ -132,9 +133,19 @@ export default function Navigation() {
                     icon={item.icon}
                     customFunc={() => openMenuTopics(item.name)}
                     state={useMenuTopics((state) => state[item.name])}
-                  />
+                  >
+                    {DUMMY_SUBCAT_TOPICS_LINKS[index] &&
+                      DUMMY_SUBCAT_TOPICS_LINKS[index].map((link: any) => (
+                        <a
+                          href={link.path}
+                          className="flex items-center ml-8 pl-4 h-10 border-0 border-l  border-neutral-700 hover:bg-neutral-800 hover:border-neutral-400 active:bg-neutral-700"
+                        >
+                          <span className="text-sm">{link.text}</span>
+                        </a>
+                      ))}
+                  </NavSubMenu>
                 ))}
-            </div>
+            </ul>
           </div>
 
           {/* Ressources category */}

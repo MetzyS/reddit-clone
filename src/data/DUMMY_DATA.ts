@@ -1,7 +1,8 @@
 import { IoGameControllerOutline } from "react-icons/io5";
 import { MenuTopics } from "@/app/store/useMenuTopics";
 
-export const DUMMY_SUBCAT: {
+// Sous catégories menu mobile
+export const DUMMY_SUBCAT_TOPICS: {
   id: number;
   name: keyof MenuTopics;
   text: string;
@@ -50,4 +51,48 @@ export const DUMMY_SUBCAT: {
     icon: IoGameControllerOutline,
     customFunc: "",
   },
+];
+
+// Liste des items pour chaque sous catégorie (menu mobile)
+export const DUMMY_SUBCAT_TOPICS_LINKS = [
+  [
+    {
+      id: 1,
+      name: "valorant",
+      text: "VALORANT",
+      path: "/",
+    },
+    {
+      id: 2,
+      name: "leagueoflegends",
+      text: "League of Legends",
+      path: "/",
+    },
+    {
+      id: 3,
+      name: "rocketleague",
+      text: "Rocket League",
+      path: "/",
+    },
+  ],
+  [
+    {
+      id: 1,
+      name: "test",
+      text: "test",
+      path: "/",
+    },
+    {
+      id: 2,
+      name: "test",
+      text: "test",
+      path: "/",
+    },
+    {
+      id: 3,
+      name: "test",
+      text: "test",
+      path: "/",
+    },
+  ],
 ];
