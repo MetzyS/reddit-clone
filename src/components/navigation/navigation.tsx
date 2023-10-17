@@ -12,9 +12,12 @@ import TailwindIcon from "../../../public/tailwind.svg";
 import GitHubIcon from "../../../public/github.svg";
 import { useMenu } from "@/app/store/useMenu";
 import { NavSubMenu } from "../UI/NavSubMenu";
-import { DUMMY_SUBCAT_TOPICS } from "@/data/DUMMY_DATA";
+import {
+  DUMMY_SUBCAT_TOPICS,
+  DUMMY_SUBCAT_TOPICS_LINKS,
+  DUMMY_SUBCAT_RESOURCES,
+} from "@/data/DUMMY_DATA";
 import { useMenuTopics } from "@/app/store/useMenuTopics";
-import { DUMMY_SUBCAT_TOPICS_LINKS } from "@/data/DUMMY_DATA";
 
 export default function Navigation() {
   // Gestion de l'ouverture des catégories + modale (recent, topics..) dans la nav mobile
@@ -27,7 +30,7 @@ export default function Navigation() {
     <>
       {menu && (
         <div
-          className="bg-black opacity-30 h-full w-full fixed z-10"
+          className="bg-black opacity-70 h-full w-full fixed z-10"
           onClick={() => {
             closeMenu("menu");
             closeMenu("headerMenu");
@@ -178,24 +181,20 @@ export default function Navigation() {
             </button>
             {/* Resources items */}
             <div className={resources ? "block mb-6" : "hidden"}>
-              <NavItem
-                image={NextIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="NextJS"
-              />
-              <NavItem
-                image={NextIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="NextJS"
-              />
-              <NavItem
-                image={NextIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="NextJS"
-              />
+              {DUMMY_SUBCAT_RESOURCES &&
+                DUMMY_SUBCAT_RESOURCES.map((item) => (
+                  <NavItem
+                    icon={item.icon}
+                    text={item.text}
+                    btnClass="hover:bg-neutral-800 active:bg-neutral-700"
+                  />
+                ))}
+              <button
+                type="button"
+                className="text-xs font-semibold ml-4 mb-12 mt-2 py-2 px-3 hover:bg-neutral-800 active:bg-neutral-700 rounded-full"
+              >
+                See more
+              </button>
             </div>
           </div>
         </ul>

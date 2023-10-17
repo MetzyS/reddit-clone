@@ -8,7 +8,7 @@ export const MobileMenuModal = () => {
   return (
     <>
       <div
-        className="bg-black opacity-30 h-full w-full fixed z-10"
+        className="bg-black opacity-70 h-full w-full fixed z-10"
         onClick={() => {
           closeMenu("headerMenu");
           closeMenu("menu");
