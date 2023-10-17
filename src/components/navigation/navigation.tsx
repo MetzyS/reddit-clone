@@ -6,7 +6,6 @@ import Image from "next/image";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { MdExpandLess } from "react-icons/md";
 import { MobileMenuModal } from "../modal/MobileMenuModal";
-import { IoGameControllerOutline } from "react-icons/io5";
 import ReactIcon from "../../../public/reactjs.svg";
 import NextIcon from "../../../public/nextjs.svg";
 import TailwindIcon from "../../../public/tailwind.svg";
@@ -146,6 +145,14 @@ export default function Navigation() {
                       ))}
                   </NavSubMenu>
                 ))}
+              <li>
+                <button
+                  type="button"
+                  className="text-xs font-semibold ml-4 mt-2 py-2 px-3 hover:bg-neutral-800 active:bg-neutral-700 rounded-full"
+                >
+                  See more
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -170,7 +177,7 @@ export default function Navigation() {
               </span>
             </button>
             {/* Resources items */}
-            <div className={resources ? "block" : "hidden"}>
+            <div className={resources ? "block mb-6" : "hidden"}>
               <NavItem
                 image={NextIcon}
                 btnClass="hover:bg-neutral-800"

@@ -15,9 +15,9 @@ export const useMenu = create<Menu>()((set) => ({
   menu: false,
   headerMenu: false,
   recent: true,
-  topics: false,
-  resources: false,
-  submenu: false,
+  topics: true,
+  resources: true,
+  submenu: true,
   openMenu: (menu) => set((state) => ({ [menu]: !state[menu] })),
   closeMenu: (menu) => set((state) => ({ [menu]: false })),
 }));
