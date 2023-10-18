@@ -1,3 +1,7 @@
+import MetzysIcon from "../../public/metzys.svg";
+import GitHubIcon from "../../public/github.svg";
+import LinkedInIcon from "../../public/linkedin.svg";
+import RedditIcon from "../../public/redditsmall.svg";
 import { IoGameControllerOutline } from "react-icons/io5";
 import {
   MdOutlineSportsBaseball,
@@ -15,6 +19,60 @@ import { FiBookOpen } from "react-icons/fi";
 import { LiaMicrophoneAltSolid } from "react-icons/lia";
 
 import { MenuTopics } from "@/app/store/useMenuTopics";
+
+// Catégories
+export const DUMMY_CATEGORIES = [
+  {
+    id: 1,
+    text: "recent",
+    statename: "recent",
+  },
+  {
+    id: 2,
+    text: "topics",
+    statename: "topics",
+  },
+  {
+    id: 3,
+    text: "ressources",
+    statename: "ressources",
+  },
+];
+// Items nav "Recent"
+export const DUMMY_RECENT_ITEMS = [
+  {
+    id: 1,
+    btnClass: "hover:bg-neutral-800",
+    image: GitHubIcon,
+    imageWidth: 25,
+    text: "GitHub",
+    path: "https://github.com/MetzyS",
+  },
+  {
+    id: 2,
+    btnClass: "hover:bg-neutral-800",
+    image: MetzysIcon,
+    imageWidth: 25,
+    text: "Portfolio",
+    path: "https://metzys.net",
+  },
+  {
+    id: 3,
+    btnClass: "hover:bg-neutral-800",
+    image: LinkedInIcon,
+    imageWidth: 25,
+    text: "LinkedIn",
+    path: "https://www.linkedin.com/in/adn%C3%A8ne-hamzaoui-14a185256/",
+  },
+  {
+    id: 4,
+    btnClass: "hover:bg-neutral-800",
+    image: RedditIcon,
+    imageWidth: 25,
+    text: "Reddit!",
+    path: "https://reddit.com",
+  },
+];
 
 // Sous catégories menu mobile
 export const DUMMY_SUBCAT_TOPICS: {

@@ -1,21 +1,19 @@
 "use client";
-import { NavButton } from "../UI/NavButton";
-import { useState } from "react";
+
+import { NavCategoryButton } from "../UI/NavCategoryButton";
+
 import { NavItem } from "../UI/NavItem";
-import Image from "next/image";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { MdExpandLess } from "react-icons/md";
 import { MobileMenuModal } from "../modal/MobileMenuModal";
-import ReactIcon from "../../../public/reactjs.svg";
-import NextIcon from "../../../public/nextjs.svg";
-import TailwindIcon from "../../../public/tailwind.svg";
-import GitHubIcon from "../../../public/github.svg";
 import { useMenu } from "@/app/store/useMenu";
 import { NavSubMenu } from "../UI/NavSubMenu";
 import {
+  DUMMY_RECENT_ITEMS,
   DUMMY_SUBCAT_TOPICS,
   DUMMY_SUBCAT_TOPICS_LINKS,
   DUMMY_SUBCAT_RESOURCES,
+  DUMMY_CATEGORIES,
 } from "@/data/DUMMY_DATA";
 import { useMenuTopics } from "@/app/store/useMenuTopics";
 
@@ -55,7 +53,12 @@ export default function Navigation() {
           {/* Recent */}
           <div className="flex flex-col border-0 border-b border-neutral-800 py-3 mt-1 mb-1">
             {/* creer un component pour ce bouton: */}
-            <button
+            <NavCategoryButton
+              text="test"
+              state={true}
+              customFunc={() => openMenu("recent")}
+            />
+            {/* <button
               type="button"
               className="flex justify-between h-8 items-center hover:bg-neutral-800"
               onClick={() => openMenu("recent")}
@@ -72,34 +75,20 @@ export default function Navigation() {
                   }
                 />
               </span>
-            </button>
+            </button> */}
 
             {/* Recent items */}
             <div className={recent ? "block" : "hidden"}>
-              <NavItem
-                image={NextIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="NextJS"
-              />
-              <NavItem
-                image={ReactIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="ReactJS"
-              />
-              <NavItem
-                image={TailwindIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="TailwindCSS"
-              />
-              <NavItem
-                image={GitHubIcon}
-                btnClass="hover:bg-neutral-800"
-                imageWidth={25}
-                text="GitHub"
-              />
+              {DUMMY_RECENT_ITEMS &&
+                DUMMY_RECENT_ITEMS.map((item) => (
+                  <NavItem
+                    path={item.path}
+                    image={item.image}
+                    btnClass="hover:bg-neutral-800"
+                    imageWidth={item.imageWidth}
+                    text={item.text}
+                  />
+                ))}
             </div>
           </div>
 

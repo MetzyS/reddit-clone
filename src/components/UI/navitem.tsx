@@ -8,6 +8,7 @@ export const NavItem = (props: {
   main?: boolean;
   image?: string;
   imageWidth?: number;
+  path?: string;
   customFunc?: () => void;
 }) => {
   let bgMain = props.main ? "bg-neutral-800" : "";
@@ -16,7 +17,7 @@ export const NavItem = (props: {
 
   return (
     <li className={props.btnClass + " " + bgMain}>
-      <a href="" className="flex items-center gap-4 h-10 px-4">
+      <a href={props.path} className="flex items-center gap-4 h-10 px-4">
         {props.image && (
           <Image src={image} width={width} alt="" className="cursor-pointer" />
         )}
