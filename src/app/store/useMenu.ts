@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface Menu {
+export interface Menu {
   menu: boolean;
   headerMenu: boolean;
   recent: boolean;

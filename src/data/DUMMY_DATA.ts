@@ -19,9 +19,14 @@ import { FiBookOpen } from "react-icons/fi";
 import { LiaMicrophoneAltSolid } from "react-icons/lia";
 
 import { MenuTopics } from "@/app/store/useMenuTopics";
+import { Menu } from "@/app/store/useMenu";
 
 // Catégories
-export const DUMMY_CATEGORIES = [
+export const DUMMY_CATEGORIES: {
+  id: number;
+  text: string;
+  statename: keyof Menu;
+}[] = [
   {
     id: 1,
     text: "recent",
@@ -34,8 +39,8 @@ export const DUMMY_CATEGORIES = [
   },
   {
     id: 3,
-    text: "ressources",
-    statename: "ressources",
+    text: "resources",
+    statename: "resources",
   },
 ];
 // Items nav "Recent"

@@ -2,7 +2,7 @@ import { MdExpandLess } from "react-icons/md";
 
 export const NavCategoryButton = (props: {
   text: string;
-  state: boolean;
+  state: any;
   customFunc?: () => void;
 }) => {
   return (
