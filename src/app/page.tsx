@@ -21,6 +21,7 @@ export default function Home() {
                 key={"post-" + post.id}
                 id={post.id}
                 subredditpath={post.subredditpath}
+                subredditIcon={post.subredditIcon}
                 subreddit={post.subreddit}
                 date={post.date}
                 path={post.path}

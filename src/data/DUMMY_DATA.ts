@@ -2,6 +2,7 @@ import MetzysIcon from "../../public/metzys.svg";
 import GitHubIcon from "../../public/github.svg";
 import LinkedInIcon from "../../public/linkedin.svg";
 import RedditIcon from "../../public/redditsmall.svg";
+import LeagueIcon from "../../public/leagueicon.png";
 import { IoGameControllerOutline } from "react-icons/io5";
 import {
   MdOutlineSportsBaseball,
@@ -20,6 +21,7 @@ import { LiaMicrophoneAltSolid } from "react-icons/lia";
 
 import { MenuTopics } from "@/app/store/useMenuTopics";
 import { Menu } from "@/app/store/useMenu";
+import { StaticImageData } from "next/image";
 
 // Catégories
 export const DUMMY_CATEGORIES: {
@@ -554,7 +556,7 @@ export const DUMMY_POSTS: {
   id: number;
   title: string;
   post: string;
-  subredditIcon: React.ComponentType;
+  subredditIcon: StaticImageData;
   subreddit: string;
   subredditpath: string;
   date?: Date;
@@ -564,33 +566,34 @@ export const DUMMY_POSTS: {
   tags: string[];
   user_id: number;
   username: string;
+  image?: string;
 }[] = [
   {
     id: 1,
     title: "Draw for Swiss Stage Day 2 for Worlds 2023",
     post: " Here is the draw for the swiss stage Round2/Day2 <br /><br />Draw for  1-0 Teams<br /><br />----------------------------------<br /><br />WBG vs G2<br /><br />BLG vs JDG<br /><br />LNG vs C9<br /><br />T1 vs GENG<br /><br />Draw for the 0-1 Teams<br /><br />----------------------------------<br /><br />TL vs NRG<br /><br />DK vs KT<br /><br />BDS vs MAD<br /><br />FNC vs GAM<br /> ",
-    subredditIcon: IoGameControllerOutline,
+    subredditIcon: LeagueIcon,
     subreddit: "leagueoflegends",
-    subredditpath: "/league",
+    subredditpath: "/leagueoflegends",
     date: today,
     likes: 2200,
     comments: 13,
-    path: "/terg",
+    path: "/leagueoflegends/post/1",
     tags: ["spoiler"],
     user_id: 1,
     username: "faker",
   },
   {
-    id: 1,
+    id: 2,
     title: "Draw for Swiss Stage Day 2 for Worlds 2023",
     post: " Here is the draw for the swiss stage Round2/Day2 <br /><br />Draw for  1-0 Teams<br /><br />----------------------------------<br /><br />WBG vs G2<br /><br />BLG vs JDG<br /><br />LNG vs C9<br /><br />T1 vs GENG<br /><br />Draw for the 0-1 Teams<br /><br />----------------------------------<br /><br />TL vs NRG<br /><br />DK vs KT<br /><br />BDS vs MAD<br /><br />FNC vs GAM<br /> ",
-    subredditIcon: IoGameControllerOutline,
+    subredditIcon: LeagueIcon,
     subreddit: "leagueoflegends",
-    subredditpath: "/league",
+    subredditpath: "/leagueoflegends",
     date: today,
     likes: 2200,
     comments: 13,
-    path: "/terg",
+    path: "/leagueoflegends/post/2",
     tags: [],
     user_id: 1,
     username: "faker",
