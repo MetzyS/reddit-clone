@@ -18,8 +18,8 @@ export const NavCategoryButton = (props: {
         <MdExpandLess
           className={
             props.state
-              ? "w-5 h-5 text-neutral-300 rotate-180"
-              : "w-5 h-5 text-neutral-300"
+              ? "w-5 h-5 text-neutral-300"
+              : "w-5 h-5 text-neutral-300 rotate-180"
           }
         />
       </span>

@@ -31,7 +31,7 @@ export const NavSubMenu = (
           </span>
           <MdExpandLess
             className={`w-5 h-5 text-neutral-300 ${
-              props.state ? "rotate-180" : "rotate-0"
+              props.state ? "rotate-0" : "rotate-180"
             }`}
           />
         </button>

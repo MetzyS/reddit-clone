@@ -546,3 +546,34 @@ export const DUMMY_SUBCAT_RESOURCES: {
     customFunc: "",
   },
 ];
+
+let date = Date.now();
+let today = new Date(date);
+
+export const DUMMY_POSTS: {
+  id: number;
+  title: string;
+  post: string;
+  subredditIcon: React.ComponentType;
+  subreddit: string;
+  subredditpath: string;
+  date?: Date;
+  likes: number;
+  comments: number;
+  path: string;
+  tags: string[];
+}[] = [
+  {
+    id: 1,
+    title: "Draw for Swiss Stage Day 2 for Worlds 2023",
+    post: " Here is the draw for the swiss stage Round2/Day2 <br /><br />Draw for  1-0 Teams<br /><br />----------------------------------<br /><br />WBG vs G2<br /><br />BLG vs JDG<br /><br />LNG vs C9<br /><br />T1 vs GENG<br /><br />Draw for the 0-1 Teams<br /><br />----------------------------------<br /><br />TL vs NRG<br /><br />DK vs KT<br /><br />BDS vs MAD<br /><br />FNC vs GAM<br /> ",
+    subredditIcon: IoGameControllerOutline,
+    subreddit: "leagueoflegends",
+    subredditpath: "/league",
+    date: today,
+    likes: 2200,
+    comments: 13,
+    path: "/terg",
+    tags: ["spoiler"],
+  },
+];
