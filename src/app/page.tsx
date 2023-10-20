@@ -1,6 +1,7 @@
 "use client";
 import { DUMMY_POSTS } from "@/data/DUMMY_DATA";
 import { SortBar } from "@/components/UI/SortBar";
+import { PostPreview } from "@/components/post/PostPreview";
 
 export default function Home() {
   return (
@@ -16,43 +17,18 @@ export default function Home() {
           {DUMMY_POSTS &&
             DUMMY_POSTS.map((post) => (
               // top bar post
-              <article
+              <PostPreview
                 key={"post-" + post.id}
-                className="border-0 border-b border-neutral-800 hover:bg-neutral-800 active:bg-neutral-700 px-4 py-4"
-              >
-                <div className="flex justify-between text-xs w-full">
-                  <div className="flex gap-4">
-                    {/* subreddit */}
-                    <div className="flex gap-2">
-                      <a href={post.subredditpath} className="flex gap-1">
-                        <span>i</span>
-                        <span>r/{post.subreddit}</span>
-                      </a>
-                    </div>
-
-                    {/* time */}
-                    <span>{post.date?.toLocaleDateString()}</span>
-                  </div>
-
-                  {/* boutons join + menu */}
-                  <div className="flex gap-2">
-                    <button type="button">Join</button>
-                    <button type="button">...</button>
-                  </div>
-                </div>
-                {/* titre */}
-                <div>
-                  <a href={post.path} className="font-bold text-lg">
-                    {post.title}
-                  </a>
-                </div>
-                {/* boutons likes/commentaires/partager */}
-                <div className="flex gap-3">
-                  <button type="button">{post.likes}</button>
-                  <button type="button">{post.comments}</button>
-                  <button type="button">x</button>
-                </div>
-              </article>
+                id={post.id}
+                subredditpath={post.subredditpath}
+                subreddit={post.subreddit}
+                date={post.date}
+                path={post.path}
+                title={post.title}
+                likes={post.likes}
+                comments={post.comments}
+                tags={post.tags}
+              />
             ))}
         </div>
 
