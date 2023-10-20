@@ -36,8 +36,8 @@ export default function Navigation() {
         ></div>
       )}
       <nav
-        className={`fixed h-screen z-20 flex mt-12 border-0 border-t border-neutral-800 ${
-          menu ? "w-72" : "w-0"
+        className={`fixed lg:hidden h-screen z-20 flex mt-4 lg:mt-7 border-0 border-t border-neutral-800 ${
+          menu ? "w-72" : "hidden w-0"
         } bg-neutral-900 h-full pr-1 overflow-x-hidden hover:overflow-y-scroll`}
       >
         <ul className="w-full pr-1">

@@ -12,8 +12,8 @@ export default function Header() {
   const { openMenu, closeMenu } = useMenu();
   return (
     // wrapper
-    <header className="border-0 border-b border-b-neutral-800 flex items-center fixed z-20">
-      <div className="flex justify-between items-center bg-neutral-900 w-screen py-1.5 px-3 md:py-2 md:px-8">
+    <header className="border-0 border-b border-b-neutral-800 flex items-center fixed z-20 top-0 left-0 right-0">
+      <div className="flex justify-between items-center bg-neutral-900 w-screen py-1.5 px-3 lg:py-2 lg:px-8">
         {/* logo */}
         <div
           className="flex items-center"
@@ -23,11 +23,11 @@ export default function Header() {
           }}
         >
           <NavButton
-            className="text-white md:hidden hover:bg-neutral-700 active:bg-neutral-600 rounded-full px-2 py-1.5"
+            className="text-white lg:hidden hover:bg-neutral-700 active:bg-neutral-600 rounded-full px-2 py-1.5"
             icon={AiOutlineMenu}
             iconClass="w-5 h-6"
           />
-          <a href="#" className="flex justify-center items-center md:hidden">
+          <a href="#" className="flex justify-center items-center lg:hidden">
             <Image
               src={redditsmall}
               alt="Logo Reddit Small"
@@ -35,12 +35,12 @@ export default function Header() {
               className="ml-2"
             />
           </a>
-          <a href="#" className="hidden md:block">
+          <a href="#" className="hidden lg:block">
             <Image src={redditbig} alt="Logo Reddit Big" width={100} />
           </a>
         </div>
         {/* searchbar */}
-        <div className="group h-10 w-5/12 hidden md:block">
+        <div className="group h-10 w-5/12 hidden lg:block">
           <div className="group-hover:bg-neutral-700 flex bg-neutral-800 px-4 py-1 rounded-tl-3xl rounded-bl-3xl w-full h-full rounded-tr-3xl rounded-br-3xl">
             <span>
               <CiSearch className="h-full w-5 text-gray-300" />
@@ -53,7 +53,7 @@ export default function Header() {
           </div>
         </div>
         {/* buttons */}
-        <div className="hidden md:flex md:gap-2">
+        <div className="hidden lg:flex lg:gap-2">
           <NavButton
             className="flex justify-center items-center bg-neutral-800 text-white px-3 py-2.5 rounded-3xl text-sm font-semibold gap-2 hover:bg-neutral-700 active:bg-neutral-600"
             icon={BsQrCodeScan}
@@ -70,7 +70,7 @@ export default function Header() {
             iconClass="w-5 h-5"
           />
         </div>
-        <div className="flex md:hidden pr-4">
+        <div className="flex lg:hidden pr-4">
           <NavButton
             className="flex justify-center items-center self-center bg-orange-700 text-white px-3 h-8 rounded-3xl text-xs font-semibold gap-2 active:bg-orange-800"
             text="Use App"
