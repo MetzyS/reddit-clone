@@ -12,7 +12,7 @@ export interface Menu {
 }
 
 export const useMenu = create<Menu>()((set) => ({
-  menu: true,
+  menu: false,
   headerMenu: false,
   recent: true,
   topics: true,

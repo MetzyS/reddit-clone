@@ -26,7 +26,7 @@ export const PostPreview = (props: {
   return (
     <article className="border-0 border-b border-neutral-800 hover:bg-neutral-800 active:bg-neutral-700 px-4 py-4">
       <div className="flex text-xs w-full">
-        <div className="flex">
+        <div className="flex flex-wrap">
           {/* subreddit */}
           <div className="flex gap-2 items-center">
             <a href={props.subredditpath} className="flex gap-1 items-center">
@@ -70,7 +70,7 @@ export const PostPreview = (props: {
           </div>
         ))}
       {/* titre */}
-      <div className="flex items-start flex-col lg:items-center lg:flex-row gap-2">
+      <div className="flex items-start flex-col gap-2 my-4">
         <a href={props.path} className="font-bold text-lg">
           {props.title}
         </a>

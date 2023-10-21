@@ -5,7 +5,7 @@ import { PostPreview } from "@/components/post/PostPreview";
 
 export default function Home() {
   return (
-    <div className="mt-8 xl:max-w-[1440px] xl:mx-auto lg:grid lg:grid-cols-12 lg:gap-x-8 px-5">
+    <div className="mt-8 xl:max-w-[1440px] xl:mx-auto lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-5">
       {/* Bannière */}
       <div className="hidden w-full h-12 bg-red-400 lg:block lg:row-start-1 lg:col-span-full xl:col-start-4">
         bannière
