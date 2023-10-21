@@ -4,6 +4,8 @@ import LinkedInIcon from "../../public/linkedin.svg";
 import RedditIcon from "../../public/redditsmall.svg";
 import LeagueIcon from "../../public/leagueicon.png";
 import PythonIcon from "../../public/pythonicon.png";
+import NextJsIcon from "../../public/nextjs.png";
+import ReactIcon from "../../public/reactjs.svg";
 import { IoGameControllerOutline } from "react-icons/io5";
 import {
   MdOutlineSportsBaseball,
@@ -565,7 +567,8 @@ export const DUMMY_POSTS: {
   comments: number;
   path: string;
   tags: string[];
-  flags: string[];
+  flags: number[];
+  // flags: 1 = Discussion, 2 = Need help, 3 = Resource
   user_id: number;
   username: string;
   image?: string;
@@ -584,7 +587,7 @@ export const DUMMY_POSTS: {
     tags: ["spoiler"],
     flags: [],
     user_id: 1,
-    username: "faker",
+    username: "randomuser",
   },
   {
     id: 2,
@@ -598,8 +601,43 @@ export const DUMMY_POSTS: {
     comments: 89,
     path: "/python/post/2",
     tags: [],
-    flags: ["discussion"],
+    flags: [1],
     user_id: 1,
-    username: "faker",
+    username: "randomuser34",
+  },
+  {
+    id: 3,
+    title:
+      "Best way to manage 500+ images on an architecture website in Next.js ?",
+    post: "I'm currently working on a website for an architecture company, and it's going to feature over 500 images of their projects. My question is about the best way to manage these images within a Next.js project. Should I store them in the public folder, or is there a more efficient way to do this like storing in a database? I am a new in web dev, so it would be helpful if y'all can be a bit descriptive!",
+    subredditIcon: NextJsIcon,
+    subreddit: "nextjs",
+    subredditpath: "/nextjs",
+    date: today,
+    upvotes: 30,
+    comments: 89,
+    path: "/nextjs/post/3",
+    tags: [],
+    flags: [2],
+    user_id: 1,
+    username: "some_random",
+  },
+  {
+    id: 4,
+    title: "New React documentation",
+    post: "Hey! Just noticed React published a new version of their documentation so I wanted to share the news with u.<br>Here's the link: <a href='https://legacy.reactjs.org/docs/getting-started.html'>Doc</a><br> Keep codin'!",
+    subredditIcon: ReactIcon,
+    subreddit: "nextjs",
+    subredditpath: "/nextjs",
+    date: today,
+    upvotes: 30,
+    comments: 89,
+    path: "/nextjs/post/3",
+    tags: [],
+    flags: [3],
+    user_id: 1,
+    username: "some_random",
   },
 ];
+
+//

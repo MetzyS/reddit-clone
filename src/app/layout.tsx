@@ -15,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-neutral-900 text-white pt-8`}>
+      <body
+        className={`bg-neutral-900 text-white pt-8 lg:m-auto lg:max-w-[1352px] `}
+      >
         <Header />
         <Navigation />
         {children}

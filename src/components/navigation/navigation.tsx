@@ -1,10 +1,8 @@
 "use client";
 
 import { NavCategoryButton } from "../UI/NavCategoryButton";
-
 import { NavItem } from "../UI/NavItem";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
-import { MdExpandLess } from "react-icons/md";
 import { MobileMenuModal } from "../modal/MobileMenuModal";
 import { useMenu } from "@/app/store/useMenu";
 import { NavSubMenu } from "../UI/NavSubMenu";
@@ -28,7 +26,7 @@ export default function Navigation() {
     <>
       {menu && (
         <div
-          className="bg-black opacity-70 h-full w-full fixed z-10"
+          className="bg-black opacity-70 h-full w-full fixed z-10 lg:hidden"
           onClick={() => {
             closeMenu("menu");
             closeMenu("headerMenu");
@@ -36,9 +34,9 @@ export default function Navigation() {
         ></div>
       )}
       <nav
-        className={`fixed lg:hidden h-screen z-20 flex mt-4 lg:mt-7 border-0 border-t border-neutral-800 ${
+        className={`fixed h-screen z-20 flex mt-4 lg:mt-7 border-0 border-t border-neutral-800 ${
           menu ? "w-72" : "hidden w-0"
-        } bg-neutral-900 h-full pr-1 overflow-x-hidden hover:overflow-y-scroll`}
+        } bg-neutral-900 h-full pr-1 overflow-x-hidden hover:overflow-y-scroll xl:block xl:w-72`}
       >
         <ul className="w-full pr-1">
           {/* Popular */}

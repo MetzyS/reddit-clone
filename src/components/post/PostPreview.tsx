@@ -17,7 +17,7 @@ export const PostPreview = (props: {
   upvotes: number;
   comments: number;
   tags: string[];
-  flags: string[];
+  flags: number[];
   image?: string;
 }) => {
   let image = props.subredditIcon ? props.subredditIcon : "";
