@@ -3,6 +3,7 @@ import GitHubIcon from "../../public/github.svg";
 import LinkedInIcon from "../../public/linkedin.svg";
 import RedditIcon from "../../public/redditsmall.svg";
 import LeagueIcon from "../../public/leagueicon.png";
+import PythonIcon from "../../public/pythonicon.png";
 import { IoGameControllerOutline } from "react-icons/io5";
 import {
   MdOutlineSportsBaseball,
@@ -560,10 +561,11 @@ export const DUMMY_POSTS: {
   subreddit: string;
   subredditpath: string;
   date?: Date;
-  likes: number;
+  upvotes: number;
   comments: number;
   path: string;
   tags: string[];
+  flags: string[];
   user_id: number;
   username: string;
   image?: string;
@@ -576,25 +578,27 @@ export const DUMMY_POSTS: {
     subreddit: "leagueoflegends",
     subredditpath: "/leagueoflegends",
     date: today,
-    likes: 2200,
+    upvotes: 220,
     comments: 13,
     path: "/leagueoflegends/post/1",
     tags: ["spoiler"],
+    flags: [],
     user_id: 1,
     username: "faker",
   },
   {
     id: 2,
-    title: "Draw for Swiss Stage Day 2 for Worlds 2023",
-    post: " Here is the draw for the swiss stage Round2/Day2 <br /><br />Draw for  1-0 Teams<br /><br />----------------------------------<br /><br />WBG vs G2<br /><br />BLG vs JDG<br /><br />LNG vs C9<br /><br />T1 vs GENG<br /><br />Draw for the 0-1 Teams<br /><br />----------------------------------<br /><br />TL vs NRG<br /><br />DK vs KT<br /><br />BDS vs MAD<br /><br />FNC vs GAM<br /> ",
-    subredditIcon: LeagueIcon,
-    subreddit: "leagueoflegends",
-    subredditpath: "/leagueoflegends",
+    title: "VS or PC?",
+    post: "So i've been using vs code a lot for python coding, but a lot of people said to me that PyCharm si better,which are the main differences?",
+    subredditIcon: PythonIcon,
+    subreddit: "python",
+    subredditpath: "/python",
     date: today,
-    likes: 2200,
-    comments: 13,
-    path: "/leagueoflegends/post/2",
+    upvotes: 30,
+    comments: 89,
+    path: "/python/post/2",
     tags: [],
+    flags: ["discussion"],
     user_id: 1,
     username: "faker",
   },

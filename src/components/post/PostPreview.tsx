@@ -2,6 +2,10 @@ import { BiSolidError } from "react-icons/bi";
 import { DefaultButton } from "../UI/DefaultButton";
 import { BsThreeDots } from "react-icons/bs";
 import Image, { StaticImageData } from "next/image";
+import { FlagButton } from "../UI/FlagButton";
+import { UpvoteButton } from "../UI/UpvoteButton";
+import { CommentButton } from "../UI/CommentButton";
+import { ShareButton } from "../UI/ShareButton";
 export const PostPreview = (props: {
   id: number;
   subredditpath: string;
@@ -10,9 +14,10 @@ export const PostPreview = (props: {
   date: any;
   path: string;
   title: string;
-  likes: number;
+  upvotes: number;
   comments: number;
   tags: string[];
+  flags: string[];
   image?: string;
 }) => {
   let image = props.subredditIcon ? props.subredditIcon : "";
@@ -30,7 +35,7 @@ export const PostPreview = (props: {
                 alt={""}
                 width={25}
                 height={25}
-                className="mr-1"
+                className="mr-1 rounded-full"
               ></Image>
               <span className="font-semibold text-neutral-300">
                 r/{props.subreddit}
@@ -58,23 +63,27 @@ export const PostPreview = (props: {
       </div>
       {/* tags */}
       {props.tags &&
-        props.tags.map((tag) => (
-          <div className="flex gap-1">
+        props.tags.map((tag, index) => (
+          <div className="flex gap-1" key={"tag-" + index}>
             <BiSolidError />
             <span className="text-xs uppercase font-semibold">{tag}</span>
           </div>
         ))}
       {/* titre */}
-      <div>
+      <div className="flex items-start flex-col lg:items-center lg:flex-row gap-2">
         <a href={props.path} className="font-bold text-lg">
           {props.title}
         </a>
+        {props.flags &&
+          props.flags.map((flag, index) => (
+            <FlagButton flag={flag} index={index} key={"flag-" + index} />
+          ))}
       </div>
       {/* boutons likes/commentaires/partager */}
       <div className="flex gap-3 text-xs font-semibold">
-        <button type="button">{props.likes}</button>
-        <button type="button">{props.comments}</button>
-        <button type="button">x</button>
+        <UpvoteButton upvotes={props.upvotes} />
+        <CommentButton comments={props.comments} />
+        <ShareButton />
       </div>
     </article>
   );

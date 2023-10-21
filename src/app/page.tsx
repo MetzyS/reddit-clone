@@ -26,9 +26,10 @@ export default function Home() {
                 date={post.date}
                 path={post.path}
                 title={post.title}
-                likes={post.likes}
+                upvotes={post.upvotes}
                 comments={post.comments}
                 tags={post.tags}
+                flags={post.flags}
               />
             ))}
         </div>
